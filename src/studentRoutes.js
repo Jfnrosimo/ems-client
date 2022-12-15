@@ -13,7 +13,7 @@ var studentRoutes = [
   },
   {
     path: "/studentDashboard",
-    name: "Student Dashboard",
+    name: "Take Examination",
     icon: "ni ni-single-copy-04 text-blue",
     component: StudentDashboard,
     layout: "/student",
@@ -25,26 +25,5 @@ var studentRoutes = [
     component: Profile,
     layout: "/student",
   },
-  {
-    path: "/user-profile",
-    name: "Change Password",
-    icon: "ni ni-settings-gear-65 text-red",
-    component: Profile,
-    layout: "/student",
-  },
-  // {
-  //   path: "/user-profile",
-  //   name: "Profile",
-  //   icon: "ni ni-single-02 text-red",
-  //   component: Profile,
-  //   layout: "/student",
-  // },
-  // {
-  //   path: "/user-profile",
-  //   name: "Change Password",
-  //   icon: "ni ni-settings-gear-65 text-red",
-  //   component: Profile,
-  //   layout: "/student",
-  // },
 ];
 export default studentRoutes;

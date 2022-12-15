@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const examSlice = createSlice({
@@ -7,22 +7,22 @@ export const examSlice = createSlice({
     exams: [],
   },
   reducers: {
-    newExam: (state, action) => {
-      axios
+    newExam: async (state, action) => {
+      const currentState = await axios
         .post("https://ems-api-oyce.onrender.com/api/v1/exams", {
-          // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
           ...action.payload.exams,
         })
         .then((result) => {
-          console.log({ createExam: result });
+          return result;
         });
+      console.log(currentState);
+      state.exams.push(currentState);
     },
     updateExam: (state, action) => {
       axios
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/exams/${action.payload.id}`,
           {
-            // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             ...action.payload.exams,
           }
         )
@@ -35,7 +35,6 @@ export const examSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/exams/${action.payload.id}`,
           {
-            // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             status: "deleted",
           }
         )

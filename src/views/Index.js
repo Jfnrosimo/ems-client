@@ -51,12 +51,27 @@ const Index = (props) => {
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt--7" fluid>
+      <Col className="mt--8 ml-4 mb-5 mb-xl-0 " xl="6" >
+                  <h2 className="text-white">
+                    Welcome to EMS, your Buddy to Examinations!
+                  </h2>
+                  
+                  <h4 className="text-white">
+                    To know more about EMS, please take time to watch infographic videos below.
+                  </h4>
+                  
+        </Col>
+
+      <Container className="mt-4 mb-10" fluid>
+      
         <Row>
           <Col className="mb-5 mb-xl-0" xl="6">
+          
             <Card className="bg-gradient-green shadow">
               <CardHeader className="bg-transparent">
+                
                 <Row className="align-items-center">
+                  
                   <div className="col">
                     <h2 className="text-white mb-0">Be Mentor Sammy!</h2>
                     <br />
@@ -79,7 +94,7 @@ const Index = (props) => {
               <CardHeader className="bg-transparent">
                 <Row className="align-items-center">
                   <div className="col">
-                    <h2 className="text-dark-green mb-0">How EMS Works.</h2>
+                    <h2 className="text-green mb-0">How EMS Works.</h2>
                     <br />
                     <iframe
                       frameborder="0"

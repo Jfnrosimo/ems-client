@@ -1,9 +1,11 @@
-
-
+//import hook
+import { useSelector } from "react-redux";
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
 
 const UserHeader = () => {
+  const user = useSelector((state) => state.users.users);
+
   return (
     <>
       <div
@@ -13,7 +15,7 @@ const UserHeader = () => {
           backgroundImage:
             "url(" + require("../../assets/img/theme/profile-cover.jpg") + ")",
           backgroundSize: "cover",
-          backgroundPosition: "center top"
+          backgroundPosition: "center top",
         }}
       >
         {/* Mask */}
@@ -22,7 +24,9 @@ const UserHeader = () => {
         <Container className="d-flex align-items-center" fluid>
           <Row>
             <Col lg="7" md="10">
-              <h1 className="display-2 text-white">Hello Jesse</h1>
+              <h1 className="display-2 text-white text-capitalize">
+                Hello {user.firstName}
+              </h1>
               <p className="text-white mt-0 mb-5">
                 This is your profile page. You can see the progress you've made
                 with your work and manage your projects or assigned tasks

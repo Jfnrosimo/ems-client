@@ -10,7 +10,6 @@ export const questionSlice = createSlice({
     newQuestion: (state, action) => {
       axios
         .post("https://ems-api-oyce.onrender.com/api/v1/questions", {
-          // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
           ...action.payload.questions,
         })
         .then((result) => {
@@ -22,7 +21,6 @@ export const questionSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/questions/${action.payload.id}`,
           {
-            // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             ...action.payload.questions,
           }
         )
@@ -35,7 +33,6 @@ export const questionSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/questions/${action.payload.id}`,
           {
-            // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             status: "deleted",
           }
         )

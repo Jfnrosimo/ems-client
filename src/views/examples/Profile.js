@@ -26,23 +26,16 @@ import UserHeader from "components/Headers/UserHeader.js";
 
 const Profile = () => {
   const state = useSelector((state) => state.users);
+  console.log(state.users.firstName);
   const dispatch = useDispatch();
-  // const [fetch, setFetch] = useState(false);
-  // const authorization = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
 
   //Render user data from ID
   useEffect(() => {
     axios
-      .get(
-        `https://ems-api-oyce.onrender.com/api/v1/users/${localStorage.getItem(
-          "userId"
-        )}`,
-        {
-          // headers: { Authorization: `Bearer ${authorization}` },
-        }
-      )
+      .get(`https://ems-api-oyce.onrender.com/api/v1/users/${userId}`)
       .then((results) => {
+        // console.log(results.data);
         dispatch(fetchCurrentUser({ ...results.data }));
       });
   }, []);
@@ -52,13 +45,13 @@ const Profile = () => {
   const [email, setEmail] = useState(state.users.email);
   const [password, setPassword] = useState(state.users.password);
   const [group, setGroup] = useState(state.users.section);
-
-  console.log(state.users);
-
-  const handleUpdateUser = async (e) => {
+  const [isUpdate, setIsUpdate] = useState(false);
+  // console.log(firstName);
+  const handleUpdateUser = (e) => {
     e.preventDefault();
 
     const users = {
+      id: localStorage.getItem("userId"),
       email: email,
       password: password,
       firstName: firstName,
@@ -66,11 +59,11 @@ const Profile = () => {
       type: "student", //type  //student or mentor
       section: group,
       rating: "", //grade of the student
-      //role:role //user or admin
     };
 
-    // dispatch(updateUser({ users }));
-    alert("Successfuly updated your profile", firstName);
+    dispatch(updateUser({ users }));
+    alert("Successfully updated your profile");
+    setIsUpdate(true);
   };
 
   return (
@@ -136,8 +129,8 @@ const Profile = () => {
                   </div>
                 </Row>
                 <div className="text-center">
-                  <h3>
-                    Jessica Jones
+                  <h3 className="text-capitalize">
+                    {firstName} {lastName}
                     <span className="font-weight-light">, 27</span>
                   </h3>
                   <div className="h5 font-weight-300">
@@ -146,7 +139,7 @@ const Profile = () => {
                   </div>
                   <div className="h5 mt-4">
                     <i className="ni business_briefcase-24 mr-2" />
-                    Solution Manager - Creative Tim Officer
+                    Senior Developer - Creative Tim Officer
                   </div>
                   <div>
                     <i className="ni education_hat mr-2" />
@@ -284,10 +277,9 @@ const Profile = () => {
                   <Button
                     color="info"
                     type="submit"
-                    onClick={(e) => {
-                      // setFetch(true);
-                      // window.location.reload();
-                    }}
+                    // onClick={(e) => {
+                    //   window.location.reload();
+                    // }}
                   >
                     Update profile
                   </Button>

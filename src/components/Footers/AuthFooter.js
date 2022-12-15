@@ -1,11 +1,7 @@
-import { Link } from "react-router-dom";
-import React, { useState } from 'react';
-
 // reactstrap components
 import { NavItem, NavLink, Nav, Container, Row, Col } from "reactstrap";
 
 const Login = () => {
-
   return (
     <>
       <footer className="bottom-4 position-fixed w-100">
@@ -15,23 +11,22 @@ const Login = () => {
               <div className="copyright text-center text-xl-left text-muted text-lighter">
                 © {new Date().getFullYear()}{" "}
                 
-                Exam Management System
-              
+                  Exam Management System
+                
               </div>
             </Col>
             <Col xl="6">
               <Nav className="nav-footer justify-content-center justify-content-xl-end ">
-                
                 <NavItem>
-                  <NavLink 
-                  href="https://www.upliftcodecamp.com/"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="text-lighter">
-                  Terms and Conditions
+                  <NavLink
+                    href="https://www.upliftcodecamp.com/"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="text-lighter"
+                  >
+                    Terms & Conditions
                   </NavLink>
                 </NavItem>
-                
                 <NavItem>
                   <NavLink
                     href="https://www.upliftcodecamp.com/"
@@ -44,7 +39,7 @@ const Login = () => {
                 </NavItem>
                 <NavItem>
                   <NavLink
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/"
                     rel="noreferrer"
                     target="_blank"
                     className="text-lighter"

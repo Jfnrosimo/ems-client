@@ -21,7 +21,6 @@ export const certificationSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/certifications/${action.payload.id}`,
           {
-            headers: {},
             ...action.payload.certifications,
           }
         )
@@ -34,7 +33,6 @@ export const certificationSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/certifications/${action.payload.id}`,
           {
-            headers: {},
             status: "deleted",
           }
         )

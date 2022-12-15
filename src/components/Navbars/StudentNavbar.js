@@ -43,10 +43,10 @@ import {
 const StudentNavbar = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  // const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(false);
   const [logout, setLogout] = useState(true);
 
-  // const authorization = localStorage.getItem("token");
+  const authorization = localStorage.getItem("token");
 
   const state = useSelector((state) => state.users);
 
@@ -96,7 +96,7 @@ const StudentNavbar = (props) => {
                 <DropdownItem className="noti-title" header tag="div">
                   <h6 className="text-overflow m-0">Welcome!</h6>
                 </DropdownItem>
-                <DropdownItem to="/student/user-profile" tag={Link}>
+                {/* <DropdownItem to="/student/user-profile" tag={Link}>
                   <i className="ni ni-single-02" />
                   <span>My profile</span>
                 </DropdownItem>
@@ -108,7 +108,7 @@ const StudentNavbar = (props) => {
                   <i className="ni ni-calendar-grid-58" />
                   <span>Activity</span>
                 </DropdownItem>
-                <DropdownItem divider />
+                <DropdownItem divider /> */}
                 {/*--------------LOGOUT---------------------------*/}
                 <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                   <i className="ni ni-user-run" />
@@ -117,7 +117,7 @@ const StudentNavbar = (props) => {
                       localStorage.clear();
                       history.push("/");
                       setLogout(true);
-                      // setAuth(false);
+                      setAuth(false);
                       console.log("logout clicked");
                     }}
                   >
