@@ -10,7 +10,7 @@ export const typeSlice = createSlice({
     newType: (state, action) => {
       axios
         .post("https://ems-api-oyce.onrender.com/api/v1/types", {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
           ...action.payload.types,
         })
         .then((result) => {
@@ -22,9 +22,7 @@ export const typeSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/types/${action.payload.id}`,
           {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
+            // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             ...action.payload.types,
           }
         )
@@ -37,9 +35,7 @@ export const typeSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/types/${action.payload.id}`,
           {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
+            // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             status: "deleted",
           }
         )

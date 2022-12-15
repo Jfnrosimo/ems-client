@@ -27,22 +27,25 @@ import UserHeader from "components/Headers/UserHeader.js";
 const Profile = () => {
   const state = useSelector((state) => state.users);
   const dispatch = useDispatch();
-  const [fetch, setFetch] = useState(false);
-  const authorization = localStorage.getItem("token");
+  // const [fetch, setFetch] = useState(false);
+  // const authorization = localStorage.getItem("token");
+  const userId = localStorage.getItem("userId");
 
   //Render user data from ID
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8080/api/v1/users/${localStorage.getItem("userId")}`,
+        `https://ems-api-oyce.onrender.com/api/v1/users/${localStorage.getItem(
+          "userId"
+        )}`,
         {
-          headers: { Authorization: `Bearer ${authorization}` },
+          // headers: { Authorization: `Bearer ${authorization}` },
         }
       )
       .then((results) => {
         dispatch(fetchCurrentUser({ ...results.data }));
       });
-  }, [fetch]);
+  }, []);
 
   const [firstName, setFirstName] = useState(state.users.firstName);
   const [lastName, setLastName] = useState(state.users.lastName);
@@ -50,10 +53,11 @@ const Profile = () => {
   const [password, setPassword] = useState(state.users.password);
   const [group, setGroup] = useState(state.users.section);
 
-  const handleUpdateUser = (e) => {
+  console.log(state.users);
+
+  const handleUpdateUser = async (e) => {
     e.preventDefault();
 
-    //console.log(email, password, firstName, lastName, group);
     const users = {
       email: email,
       password: password,
@@ -65,7 +69,7 @@ const Profile = () => {
       //role:role //user or admin
     };
 
-    dispatch(updateUser({ users }));
+    // dispatch(updateUser({ users }));
     alert("Successfuly updated your profile", firstName);
   };
 
@@ -217,7 +221,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="Jesse"
+                            defaultValue={lastName}
                             // placeholder="Last name"
                             id="lastName"
                             type="text"
@@ -281,7 +285,7 @@ const Profile = () => {
                     color="info"
                     type="submit"
                     onClick={(e) => {
-                      setFetch(true);
+                      // setFetch(true);
                       // window.location.reload();
                     }}
                   >

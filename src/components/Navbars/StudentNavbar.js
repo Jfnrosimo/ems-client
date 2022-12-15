@@ -43,10 +43,10 @@ import {
 const StudentNavbar = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const [auth, setAuth] = useState(false);
+  // const [auth, setAuth] = useState(false);
   const [logout, setLogout] = useState(true);
 
-  const authorization = localStorage.getItem("token");
+  // const authorization = localStorage.getItem("token");
 
   const state = useSelector((state) => state.users);
 
@@ -117,7 +117,7 @@ const StudentNavbar = (props) => {
                       localStorage.clear();
                       history.push("/");
                       setLogout(true);
-                      setAuth(false);
+                      // setAuth(false);
                       console.log("logout clicked");
                     }}
                   >

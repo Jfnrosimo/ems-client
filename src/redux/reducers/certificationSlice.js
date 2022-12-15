@@ -10,7 +10,6 @@ export const certificationSlice = createSlice({
     newCertification: (state, action) => {
       axios
         .post("https://ems-api-oyce.onrender.com/api/v1/certifications", {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           ...action.payload.certifications,
         })
         .then((result) => {
@@ -22,9 +21,7 @@ export const certificationSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/certifications/${action.payload.id}`,
           {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
+            headers: {},
             ...action.payload.certifications,
           }
         )
@@ -37,9 +34,7 @@ export const certificationSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/certifications/${action.payload.id}`,
           {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
+            headers: {},
             status: "deleted",
           }
         )

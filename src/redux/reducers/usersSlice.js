@@ -11,7 +11,7 @@ export const usersSlice = createSlice({
     newUser: (state, action) => {
       axios
         .post("https://ems-api-oyce.onrender.com/api/v1/auth/register", {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          // headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           ...action.payload.users,
         })
         .then((result) => {
@@ -23,12 +23,10 @@ export const usersSlice = createSlice({
     },
     updateUser: (state, action) => {
       axios
-        .patch(
-          `https://ems-api-oyce.onrender.com/api/v1/users/${action.payload.id}`,
+        .put(
+          `https://ems-api-oyce.onrender.com/api/v1/users/${action.payload.users.id}`,
           {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
+            // headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
             ...action.payload.users,
           }
         )
@@ -44,9 +42,7 @@ export const usersSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/users/${action.payload.id}`,
           {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
+            // headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
             status: "deleted",
           }
         )

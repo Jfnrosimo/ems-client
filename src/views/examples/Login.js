@@ -28,8 +28,6 @@ const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const state = useSelector((state) => state.users);
-  // localStorage.setItem("isAuthenticated", "false");
-  const authorization = localStorage.getItem("token");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -40,8 +38,7 @@ const Login = () => {
     }
     try {
       axios
-        .post("http://localhost:8080/api/v1/auth/login", {
-          headers: { Authorization: `Bearer ${authorization}` },
+        .post("https://ems-api-oyce.onrender.com/api/v1/auth/login", {
           email: email,
           password: password,
         })
@@ -50,7 +47,6 @@ const Login = () => {
           localStorage.setItem("userId", result.data.userId);
           localStorage.setItem("jwttoken", result.data.jwttoken);
           localStorage.setItem("token", result.data.user.token);
-          localStorage.setItem("userType", result.data.user.type);
           localStorage.setItem("isAuthenticated", "true");
           console.log(result.data.user.type);
           if (result.data.user.type === "mentor") {

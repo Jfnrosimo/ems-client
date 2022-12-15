@@ -384,11 +384,11 @@ let chartExample2 = {
     }
   },
   data: {
-    labels: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ["2017", "2018", "2019", "2020", "2021", "2022"],
     datasets: [
       {
         label: "Sales",
-        data: [25, 20, 30, 22, 17, 29],
+        data: [685 , 896, 754, 458, 965, 652],
         maxBarThickness: 10
       }
     ]

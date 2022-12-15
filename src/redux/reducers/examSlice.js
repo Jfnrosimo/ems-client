@@ -10,7 +10,7 @@ export const examSlice = createSlice({
     newExam: (state, action) => {
       axios
         .post("https://ems-api-oyce.onrender.com/api/v1/exams", {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
           ...action.payload.exams,
         })
         .then((result) => {
@@ -22,9 +22,7 @@ export const examSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/exams/${action.payload.id}`,
           {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
+            // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             ...action.payload.exams,
           }
         )
@@ -37,9 +35,7 @@ export const examSlice = createSlice({
         .put(
           `https://ems-api-oyce.onrender.com/api/v1/exams/${action.payload.id}`,
           {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
+            // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             status: "deleted",
           }
         )

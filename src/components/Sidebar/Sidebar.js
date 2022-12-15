@@ -221,15 +221,15 @@ const Sidebar = (props) => {
             <CardBody>
               <Row>
                 <Col className="col-auto">
-                          <div className="icon icon-shape bg-green text-white rounded-circle shadow ">
-                            <i className="fas fa-chart-bar" />
-                          </div>
-                  </Col>
+                  <div className="icon icon-shape bg-green text-white rounded-circle shadow ">
+                    <i className="fas fa-chart-bar" />
+                  </div>
+                </Col>
                 <div className="col">
                   <CardTitle
                     tag="h6"
                     className="text-uppercase text-muted mb-0"
-                    >
+                  >
                     Exam Created
                   </CardTitle>
                   <span className="h5 font-weight-bold mb-1">124</span>
@@ -237,21 +237,21 @@ const Sidebar = (props) => {
               </Row>
             </CardBody>
           </Card>
-          
+
           {/* Exam created card */}
           <Card className="card-stats mb-4 mb-xl-0">
             <CardBody>
               <Row>
                 <Col className="col-auto">
-                        <div className="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                          <i className="fas fa-chart-pie" />
-                        </div>
-                  </Col>
+                  <div className="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                    <i className="fas fa-chart-pie" />
+                  </div>
+                </Col>
                 <div className="col">
                   <CardTitle
                     tag="h6"
                     className="text-uppercase text-muted mb-0"
-                    >
+                  >
                     Passed Examinees
                   </CardTitle>
                   <span className="h5 font-weight-bold mb-0">124/300</span>
@@ -259,21 +259,21 @@ const Sidebar = (props) => {
               </Row>
             </CardBody>
           </Card>
-          
+
           {/* Exam created card */}
           <Card className="card-stats mb-4 mb-xl-0">
             <CardBody>
               <Row>
                 <Col className="col-auto">
-                        <div className="icon icon-shape bg-red text-white rounded-circle shadow">
-                          <i className="fas fa-users" />
-                        </div>
-                  </Col>
+                  <div className="icon icon-shape bg-red text-white rounded-circle shadow">
+                    <i className="fas fa-users" />
+                  </div>
+                </Col>
                 <div className="col">
                   <CardTitle
                     tag="h6"
                     className="text-uppercase text-muted mb-0"
-                    >
+                  >
                     Failed examinees
                   </CardTitle>
                   <span className="h5 font-weight-bold mb-0">124</span>
@@ -281,21 +281,21 @@ const Sidebar = (props) => {
               </Row>
             </CardBody>
           </Card>
-          
+
           {/* Exam created card */}
           <Card className="card-stats mb-4 mb-xl-0">
             <CardBody>
               <Row>
                 <Col className="col-auto">
-                        <div className="icon icon-shape bg-info text-white rounded-circle shadow">
-                          <i className="fas fa-percent" />
-                        </div>
-                  </Col>
+                  <div className="icon icon-shape bg-info text-white rounded-circle shadow">
+                    <i className="fas fa-percent" />
+                  </div>
+                </Col>
                 <div className="col">
                   <CardTitle
                     tag="h6"
                     className="text-uppercase text-muted mb-0"
-                    >
+                  >
                     Perfor mance
                   </CardTitle>
                   <span className="h5 font-weight-bold mb-0">124</span>
@@ -303,8 +303,7 @@ const Sidebar = (props) => {
               </Row>
             </CardBody>
           </Card>
-          <br/>
-                    
+          <br />
         </Collapse>
       </Container>
     </Navbar>

@@ -27,7 +27,7 @@ const CreateExam = () => {
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt--9" fluid>
+      <Container className="mt--7" fluid>
         <Row>
           <Col xl="4">
             <Card className="shadow">
