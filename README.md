@@ -1,5 +1,13 @@
 # Full-stack MERN team project
 
+## Live site
+
+- https://ems-4e55.onrender.com/
+
+## Backend repository
+
+- https://github.com/Jfnrosimo/ems-api
+
 ## Developer
 
 - Samuel Corpuz
