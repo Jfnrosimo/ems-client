@@ -9,7 +9,7 @@ export const typeSlice = createSlice({
   reducers: {
     newType: (state, action) => {
       axios
-        .post("https://ems-api.onrender.com/api/v1/types", {
+        .post("https://ems-api-oyce.onrender.com/api/v1/types", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           ...action.payload.types,
         })
@@ -19,20 +19,30 @@ export const typeSlice = createSlice({
     },
     updateType: (state, action) => {
       axios
-        .put(`https://ems-api.onrender.com/api/v1/types/${action.payload.id}`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-          ...action.payload.types,
-        })
+        .put(
+          `https://ems-api-oyce.onrender.com/api/v1/types/${action.payload.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            ...action.payload.types,
+          }
+        )
         .then((result) => {
           console.log({ updateType: result });
         });
     },
     deleteType: (state, action) => {
       axios
-        .put(`https://ems-api.onrender.com/api/v1/types/${action.payload.id}`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-          status: "deleted",
-        })
+        .put(
+          `https://ems-api-oyce.onrender.com/api/v1/types/${action.payload.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            status: "deleted",
+          }
+        )
         .then((result) => {
           console.log({ deleteType: result });
         });

@@ -9,7 +9,7 @@ export const choiceSlice = createSlice({
   reducers: {
     newChoice: (state, action) => {
       axios
-        .post("https://ems-api.onrender.com/api/v1/choices", {
+        .post("https://ems-api-oyce.onrender.com/api/v1/choices", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           ...action.payload.choices,
         })
@@ -20,7 +20,7 @@ export const choiceSlice = createSlice({
     updateChoice: (state, action) => {
       axios
         .put(
-          `https://ems-api.onrender.com/api/v1/choices/${action.payload.id}`,
+          `https://ems-api-oyce.onrender.com/api/v1/choices/${action.payload.id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -35,7 +35,7 @@ export const choiceSlice = createSlice({
     deleteChoice: (state, action) => {
       axios
         .put(
-          `https://ems-api.onrender.com/api/v1/choices/${action.payload.id}`,
+          `https://ems-api-oyce.onrender.com/api/v1/choices/${action.payload.id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

@@ -9,7 +9,7 @@ export const answerSlice = createSlice({
   reducers: {
     newAnswer: (state, action) => {
       axios
-        .post("https://ems-api.onrender.com/api/v1/answers", {
+        .post("https://ems-api-oyce.onrender.com/api/v1/answers", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           ...action.payload.answers,
         })
@@ -20,7 +20,7 @@ export const answerSlice = createSlice({
     updateAnswer: (state, action) => {
       axios
         .put(
-          `https://ems-api.onrender.com/api/v1/answers/${action.payload.id}`,
+          `https://ems-api-oyce.onrender.com/api/v1/answers/${action.payload.id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -35,7 +35,7 @@ export const answerSlice = createSlice({
     deleteAnswer: (state, action) => {
       axios
         .put(
-          `https://ems-api.onrender.com/api/v1/answers/${action.payload.id}`,
+          `https://ems-api-oyce.onrender.com/api/v1/answers/${action.payload.id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

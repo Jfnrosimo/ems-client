@@ -9,7 +9,7 @@ export const sectionSlice = createSlice({
   reducers: {
     newSection: (state, action) => {
       axios
-        .post("https://ems-api.onrender.com/api/v1/sections", {
+        .post("https://ems-api-oyce.onrender.com/api/v1/sections", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           ...action.payload.sections,
         })
@@ -20,7 +20,7 @@ export const sectionSlice = createSlice({
     updateSection: (state, action) => {
       axios
         .put(
-          `https://ems-api.onrender.com/api/v1/sections/${action.payload.id}`,
+          `https://ems-api-oyce.onrender.com/api/v1/sections/${action.payload.id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -35,7 +35,7 @@ export const sectionSlice = createSlice({
     deleteSection: (state, action) => {
       axios
         .put(
-          `https://ems-api.onrender.com/api/v1/sections/${action.payload.id}`,
+          `https://ems-api-oyce.onrender.com/api/v1/sections/${action.payload.id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

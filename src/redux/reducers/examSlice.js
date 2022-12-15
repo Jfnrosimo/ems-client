@@ -9,7 +9,7 @@ export const examSlice = createSlice({
   reducers: {
     newExam: (state, action) => {
       axios
-        .post("https://ems-api.onrender.com/api/v1/exams", {
+        .post("https://ems-api-oyce.onrender.com/api/v1/exams", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           ...action.payload.exams,
         })
@@ -19,20 +19,30 @@ export const examSlice = createSlice({
     },
     updateExam: (state, action) => {
       axios
-        .put(`https://ems-api.onrender.com/api/v1/exams/${action.payload.id}`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-          ...action.payload.exams,
-        })
+        .put(
+          `https://ems-api-oyce.onrender.com/api/v1/exams/${action.payload.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            ...action.payload.exams,
+          }
+        )
         .then((result) => {
           console.log({ updateExam: result });
         });
     },
     deleteExam: (state, action) => {
       axios
-        .put(`https://ems-api.onrender.com/api/v1/exams/${action.payload.id}`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-          status: "deleted",
-        })
+        .put(
+          `https://ems-api-oyce.onrender.com/api/v1/exams/${action.payload.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            status: "deleted",
+          }
+        )
         .then((result) => {
           console.log({ deleteExam: result });
         });
